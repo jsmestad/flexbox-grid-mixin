@@ -1,0 +1,1191 @@
+
+<!-- saved from url=(0026)http://localhost:4000/grid -->
+<html data-ember-extension="1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>grid example</title>
+    <style>
+    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+    /**
+     * 1. Set default font family to sans-serif.
+     * 2. Prevent iOS and IE text size adjust after device orientation change,
+     *    without disabling user zoom.
+     */
+    @import url(https://fonts.googleapis.com/css?family=Work+Sans:200,300,500,700,400,100);
+    html {
+      font-family: sans-serif;
+      /* 1 */
+      -ms-text-size-adjust: 100%;
+      /* 2 */
+      -webkit-text-size-adjust: 100%;
+      /* 2 */
+    }
+
+    /**
+     * Remove default margin.
+     */
+    body {
+      margin: 0;
+    }
+
+    /* HTML5 display definitions
+       ========================================================================== */
+    /**
+     * Correct `block` display not defined for any HTML5 element in IE 8/9.
+     * Correct `block` display not defined for `details` or `summary` in IE 10/11
+     * and Firefox.
+     * Correct `block` display not defined for `main` in IE 11.
+     */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    menu,
+    nav,
+    section,
+    summary {
+      display: block;
+    }
+
+    /**
+     * 1. Correct `inline-block` display not defined in IE 8/9.
+     * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+     */
+    audio,
+    canvas,
+    progress,
+    video {
+      display: inline-block;
+      /* 1 */
+      vertical-align: baseline;
+      /* 2 */
+    }
+
+    /**
+     * Prevent modern browsers from displaying `audio` without controls.
+     * Remove excess height in iOS 5 devices.
+     */
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+
+    /**
+     * Address `[hidden]` styling not present in IE 8/9/10.
+     * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+     */
+    [hidden],
+    template {
+      display: none;
+    }
+
+    /* Links
+       ========================================================================== */
+    /**
+     * Remove the gray background color from active links in IE 10.
+     */
+    a {
+      background-color: transparent;
+    }
+
+    /**
+     * Improve readability of focused elements when they are also in an
+     * active/hover state.
+     */
+    a:active,
+    a:hover {
+      outline: 0;
+    }
+
+    /* Text-level semantics
+       ========================================================================== */
+    /**
+     * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+     */
+    abbr[title] {
+      border-bottom: 1px dotted;
+    }
+
+    /**
+     * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+     */
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    /**
+     * Address styling not present in Safari and Chrome.
+     */
+    dfn {
+      font-style: italic;
+    }
+
+    /**
+     * Address variable `h1` font-size and margin within `section` and `article`
+     * contexts in Firefox 4+, Safari, and Chrome.
+     */
+    h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+
+    /**
+     * Address styling not present in IE 8/9.
+     */
+    mark {
+      background: #ff0;
+      color: #000;
+    }
+
+    /**
+     * Address inconsistent and variable font size in all browsers.
+     */
+    small {
+      font-size: 80%;
+    }
+
+    /**
+     * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+     */
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    /* Embedded content
+       ========================================================================== */
+    /**
+     * Remove border when inside `a` element in IE 8/9/10.
+     */
+    img {
+      border: 0;
+    }
+
+    /**
+     * Correct overflow not hidden in IE 9/10/11.
+     */
+    svg:not(:root) {
+      overflow: hidden;
+    }
+
+    /* Grouping content
+       ========================================================================== */
+    /**
+     * Address margin not present in IE 8/9 and Safari.
+     */
+    figure {
+      margin: 1em 40px;
+    }
+
+    /**
+     * Address differences between Firefox and other browsers.
+     */
+    hr {
+      box-sizing: content-box;
+      height: 0;
+    }
+
+    /**
+     * Contain overflow in all browsers.
+     */
+    pre {
+      overflow: auto;
+    }
+
+    /**
+     * Address odd `em`-unit font size rendering in all browsers.
+     */
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+
+    /* Forms
+       ========================================================================== */
+    /**
+     * Known limitation: by default, Chrome and Safari on OS X allow very limited
+     * styling of `select`, unless a `border` property is set.
+     */
+    /**
+     * 1. Correct color not being inherited.
+     *    Known issue: affects color of disabled elements.
+     * 2. Correct font properties not being inherited.
+     * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+     */
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      color: inherit;
+      /* 1 */
+      font: inherit;
+      /* 2 */
+      margin: 0;
+      /* 3 */
+    }
+
+    /**
+     * Address `overflow` set to `hidden` in IE 8/9/10/11.
+     */
+    button {
+      overflow: visible;
+    }
+
+    /**
+     * Address inconsistent `text-transform` inheritance for `button` and `select`.
+     * All other form control elements do not inherit `text-transform` values.
+     * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+     * Correct `select` style inheritance in Firefox.
+     */
+    button,
+    select {
+      text-transform: none;
+    }
+
+    /**
+     * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+     *    and `video` controls.
+     * 2. Correct inability to style clickable `input` types in iOS.
+     * 3. Improve usability and consistency of cursor style between image-type
+     *    `input` and others.
+     */
+    button,
+    html input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+      -webkit-appearance: button;
+      /* 2 */
+      cursor: pointer;
+      /* 3 */
+    }
+
+    /**
+     * Re-set default cursor for disabled elements.
+     */
+    button[disabled],
+    html input[disabled] {
+      cursor: default;
+    }
+
+    /**
+     * Remove inner padding and border in Firefox 4+.
+     */
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    /**
+     * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+     * the UA stylesheet.
+     */
+    input {
+      line-height: normal;
+    }
+
+    /**
+     * It's recommended that you don't attempt to style these elements.
+     * Firefox's implementation doesn't respect box-sizing, padding, or width.
+     *
+     * 1. Address box sizing set to `content-box` in IE 8/9/10.
+     * 2. Remove excess padding in IE 8/9/10.
+     */
+    input[type="checkbox"],
+    input[type="radio"] {
+      box-sizing: border-box;
+      /* 1 */
+      padding: 0;
+      /* 2 */
+    }
+
+    /**
+     * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+     * `font-size` values of the `input`, it causes the cursor style of the
+     * decrement button to change from `default` to `text`.
+     */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      height: auto;
+    }
+
+    /**
+     * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+     * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+     */
+    input[type="search"] {
+      -webkit-appearance: textfield;
+      /* 1 */
+      box-sizing: content-box;
+      /* 2 */
+    }
+
+    /**
+     * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+     * Safari (but not Chrome) clips the cancel button when the search input has
+     * padding (and `textfield` appearance).
+     */
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    /**
+     * Define consistent border, margin, and padding.
+     */
+    fieldset {
+      border: 1px solid #c0c0c0;
+      margin: 0 2px;
+      padding: 0.35em 0.625em 0.75em;
+    }
+
+    /**
+     * 1. Correct `color` not being inherited in IE 8/9/10/11.
+     * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+     */
+    legend {
+      border: 0;
+      /* 1 */
+      padding: 0;
+      /* 2 */
+    }
+
+    /**
+     * Remove default vertical scrollbar in IE 8/9/10/11.
+     */
+    textarea {
+      overflow: auto;
+    }
+
+    /**
+     * Don't inherit the `font-weight` (applied by a rule above).
+     * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+     */
+    optgroup {
+      font-weight: bold;
+    }
+
+    /* Tables
+       ========================================================================== */
+    /**
+     * Remove most spacing between table cells.
+     */
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    td,
+    th {
+      padding: 0;
+    }
+
+    /* * { */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* box-sizing: border-box; */
+    /* } */
+    /* html, body { */
+    /* height: 100%; */
+    /* background: #eee; */
+    /* } */
+    /* .wrapper { */
+    /* margin: 20px auto; */
+    /* } */
+    /* [class*="col-"] { */
+    /* margin-bottom: 20px; */
+    /* min-height: 30px; */
+    /* background: #fff; */
+    /* box-shadow: 0 1px 1px rgba(0,0,0,.1); */
+    /* } */
+    /* @media all and (min-width: 500px) { */
+    /* .wrapper { */
+    /* padding: 0 20px; */
+    /* } */
+    /* .row { */
+    /* display: flex; */
+    /* } */
+    /* [class*="col-"] { */
+    /* margin-right: 20px; */
+    /* } */
+    /* [class*="col-"]:last-child { */
+    /* margin-right: 0; */
+    /* } */
+    /* [> @for $i from 1 through 12 { <] */
+    /* [> .col-{ <] */
+    /* [> flex: $i; <] */
+    /* [> } <] */
+    /* [> } <] */
+    /* } */
+    .grid .row {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -moz-box-direction: normal;
+      box-direction: normal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      -webkit-box-lines: multiple;
+      -moz-box-lines: multiple;
+      box-lines: multiple;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid .row {
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        box-direction: normal;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-direction: column;
+      }
+    }
+
+    .grid {
+      box-sizing: border-box;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .grid * {
+      box-sizing: border-box;
+    }
+
+    .grid .col-1, .grid .col-2, .grid .col-3, .grid .col-4, .grid .col-5, .grid .col-6, .grid .col-7, .grid .col-8, .grid .col-9, .grid .col-10, .grid .col-11, .grid .col-12, .grid.standard .col-1, .grid.standard .col-2, .grid.standard .col-3, .grid.standard .col-4, .grid.standard .col-5, .grid.standard .col-6, .grid.standard .col-7, .grid.standard .col-8, .grid.standard .col-9, .grid.standard .col-10, .grid.standard .col-11, .grid.standard .col-12, .column {
+      margin-bottom: 0.5rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .grid .col-1 {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+    }
+    .grid .col-2 {
+      -webkit-box-flex: 2;
+      -moz-box-flex: 2;
+      box-flex: 2;
+      -webkit-flex: 2;
+      -moz-flex: 2;
+      -ms-flex: 2;
+      flex: 2;
+    }
+    .grid .col-3 {
+      -webkit-box-flex: 3;
+      -moz-box-flex: 3;
+      box-flex: 3;
+      -webkit-flex: 3;
+      -moz-flex: 3;
+      -ms-flex: 3;
+      flex: 3;
+    }
+    .grid .col-4 {
+      -webkit-box-flex: 4;
+      -moz-box-flex: 4;
+      box-flex: 4;
+      -webkit-flex: 4;
+      -moz-flex: 4;
+      -ms-flex: 4;
+      flex: 4;
+    }
+    .grid .col-5 {
+      -webkit-box-flex: 5;
+      -moz-box-flex: 5;
+      box-flex: 5;
+      -webkit-flex: 5;
+      -moz-flex: 5;
+      -ms-flex: 5;
+      flex: 5;
+    }
+    .grid .col-6 {
+      -webkit-box-flex: 6;
+      -moz-box-flex: 6;
+      box-flex: 6;
+      -webkit-flex: 6;
+      -moz-flex: 6;
+      -ms-flex: 6;
+      flex: 6;
+    }
+    .grid .col-7 {
+      -webkit-box-flex: 7;
+      -moz-box-flex: 7;
+      box-flex: 7;
+      -webkit-flex: 7;
+      -moz-flex: 7;
+      -ms-flex: 7;
+      flex: 7;
+    }
+    .grid .col-8 {
+      -webkit-box-flex: 8;
+      -moz-box-flex: 8;
+      box-flex: 8;
+      -webkit-flex: 8;
+      -moz-flex: 8;
+      -ms-flex: 8;
+      flex: 8;
+    }
+    .grid .col-9 {
+      -webkit-box-flex: 9;
+      -moz-box-flex: 9;
+      box-flex: 9;
+      -webkit-flex: 9;
+      -moz-flex: 9;
+      -ms-flex: 9;
+      flex: 9;
+    }
+    .grid .col-10 {
+      -webkit-box-flex: 10;
+      -moz-box-flex: 10;
+      box-flex: 10;
+      -webkit-flex: 10;
+      -moz-flex: 10;
+      -ms-flex: 10;
+      flex: 10;
+    }
+    .grid .col-11 {
+      -webkit-box-flex: 11;
+      -moz-box-flex: 11;
+      box-flex: 11;
+      -webkit-flex: 11;
+      -moz-flex: 11;
+      -ms-flex: 11;
+      flex: 11;
+    }
+    .grid .col-12 {
+      -webkit-box-flex: 12;
+      -moz-box-flex: 12;
+      box-flex: 12;
+      -webkit-flex: 12;
+      -moz-flex: 12;
+      -ms-flex: 12;
+      flex: 12;
+    }
+    .grid.standard .col-1 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 8.33333%;
+      -moz-flex: 0 0 8.33333%;
+      -ms-flex: 0 0 8.33333%;
+      flex: 0 0 8.33333%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-1 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-2 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 16.66667%;
+      -moz-flex: 0 0 16.66667%;
+      -ms-flex: 0 0 16.66667%;
+      flex: 0 0 16.66667%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-2 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-3 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 25%;
+      -moz-flex: 0 0 25%;
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-3 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-4 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 33.33333%;
+      -moz-flex: 0 0 33.33333%;
+      -ms-flex: 0 0 33.33333%;
+      flex: 0 0 33.33333%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-4 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-5 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 41.66667%;
+      -moz-flex: 0 0 41.66667%;
+      -ms-flex: 0 0 41.66667%;
+      flex: 0 0 41.66667%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-5 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-6 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 50%;
+      -moz-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-6 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-7 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 58.33333%;
+      -moz-flex: 0 0 58.33333%;
+      -ms-flex: 0 0 58.33333%;
+      flex: 0 0 58.33333%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-7 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-8 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 66.66667%;
+      -moz-flex: 0 0 66.66667%;
+      -ms-flex: 0 0 66.66667%;
+      flex: 0 0 66.66667%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-8 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-9 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 75%;
+      -moz-flex: 0 0 75%;
+      -ms-flex: 0 0 75%;
+      flex: 0 0 75%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-9 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-10 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 83.33333%;
+      -moz-flex: 0 0 83.33333%;
+      -ms-flex: 0 0 83.33333%;
+      flex: 0 0 83.33333%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-10 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-11 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 91.66667%;
+      -moz-flex: 0 0 91.66667%;
+      -ms-flex: 0 0 91.66667%;
+      flex: 0 0 91.66667%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-11 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+    .grid.standard .col-12 {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 100%;
+      -moz-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      /* @media only screen and (min-width: 480px) and (max-width: 767px) { @content; } */
+      /* } @else if $media == tablets { */
+      /* @media only screen and (min-width: 480px) and (max-width: 959px) { @content; } */
+      /* } */
+    }
+    @media only screen and (max-width: 479px) {
+      .grid.standard .col-12 {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+    }
+
+    .column {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+    }
+
+    body {
+      font-family: "Work Sans", sans-serif;
+    }
+
+    </style>
+  </head>
+  <body>
+    <h3>Standard Static Grid</h3>
+<div class="grid standard">
+  <div class="row">
+
+      <div class="show col-1">
+        1
+      </div>
+
+      <div class="show col-2">
+        2
+      </div>
+
+      <div class="show col-3">
+        3
+      </div>
+
+      <div class="show col-4">
+        4
+      </div>
+
+      <div class="show col-5">
+        5
+      </div>
+
+      <div class="show col-6">
+        6
+      </div>
+
+      <div class="show col-7">
+        7
+      </div>
+
+      <div class="show col-8">
+        8
+      </div>
+
+      <div class="show col-9">
+        9
+      </div>
+
+      <div class="show col-10">
+        10
+      </div>
+
+      <div class="show col-11">
+        11
+      </div>
+
+      <div class="show col-12">
+        12
+      </div>
+
+  </div>
+
+
+    <div class="row">
+      <div class="show col-1">1</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-2">2</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-3">3</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-4">4</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-5">5</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-6">6</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-7">7</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-8">8</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-9">9</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-10">10</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-11">11</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-12">12</div>
+    </div>
+
+</div>
+
+<hr>
+
+<h3>Fluid Grid</h3>
+
+<div class="grid">
+  <div class="row">
+
+      <div class="show column">
+        Flex 1
+      </div>
+
+      <div class="show column">
+        Flex 2
+      </div>
+
+      <div class="show column">
+        Flex 3
+      </div>
+
+      <div class="show column">
+        Flex 4
+      </div>
+
+      <div class="show column">
+        Flex 5
+      </div>
+
+      <div class="show column">
+        Flex 6
+      </div>
+
+      <div class="show column">
+        Flex 7
+      </div>
+
+      <div class="show column">
+        Flex 8
+      </div>
+
+      <div class="show column">
+        Flex 9
+      </div>
+
+      <div class="show column">
+        Flex 10
+      </div>
+
+      <div class="show column">
+        Flex 11
+      </div>
+
+      <div class="show column">
+        Flex 12
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="show col-1">
+        Standard 1
+      </div>
+
+      <div class="show col-2">
+        Standard 2
+      </div>
+
+      <div class="show col-3">
+        Standard 3
+      </div>
+
+      <div class="show col-4">
+        Standard 4
+      </div>
+
+      <div class="show col-5">
+        Standard 5
+      </div>
+
+      <div class="show col-6">
+        Standard 6
+      </div>
+
+      <div class="show col-7">
+        Standard 7
+      </div>
+
+      <div class="show col-8">
+        Standard 8
+      </div>
+
+      <div class="show col-9">
+        Standard 9
+      </div>
+
+      <div class="show col-10">
+        Standard 10
+      </div>
+
+      <div class="show col-11">
+        Standard 11
+      </div>
+
+      <div class="show col-12">
+        Standard 12
+      </div>
+
+  </div>
+
+
+    <div class="row">
+      <div class="show col-1">Standard 1</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-2">Standard 2</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-3">Standard 3</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-4">Standard 4</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-5">Standard 5</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-6">Standard 6</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-7">Standard 7</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-8">Standard 8</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-9">Standard 9</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-10">Standard 10</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-11">Standard 11</div>
+    </div>
+
+    <div class="row">
+      <div class="show col-12">Standard 12</div>
+    </div>
+
+</div>
+
+<style>
+.show {
+  min-height: 30px;
+  background-color: #ccc;
+  text-align: center;
+  border: 1px dotted red;
+}
+</style>
+
+
+
+</body></html>
+
