@@ -8,8 +8,11 @@ All the solutions out there fell into two categories:
 * Required the use of `.col-1-xs` or some other cluttered syntax
 
 What I was after was a way to set my grid **only** using SCSS mixins. This is
-similar to how [neat](http://neat.thoughtbot.io) works.
+similar to how [neat](http://neat.bourbon.io) works.
 
+## Dependency
+
+This mixin assumes you are using and have loaded [bourbon](http://bourbon.io). This provides all the vendor-specific extensions you may need. If you don't want it, simply swap out the `@include display(flex);` for `display: flex;`.
 
 ## Features
 
