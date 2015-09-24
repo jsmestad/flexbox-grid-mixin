@@ -1,0 +1,39 @@
+{
+  "name": "flexbox-grid-mixin",
+  "version": "0.0.1",
+  "homepage": "http://jsmestad.github.io/flexbox-grid-mixin/",
+  "authors": [
+    "Justin Smestad <justin.smestad@gmail.com>"
+  ],
+  "description": "Flexbox grid SASS/SCSS mixin-based inspired by neat",
+  "main": "grid.scss",
+  "keywords": [
+    "flex",
+    "flexbox",
+    "grid",
+    "columns",
+    "layout",
+    "media",
+    "neat",
+    "sass",
+    "scss",
+    "mixin",
+    "semantic",
+    "fluid"
+  ],
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsmestad/flexbox-grid-mixin.git"
+  },
+  "dependencies": {
+    "bourbon": ">=4.0"
+  }
+}
