@@ -1,5 +1,7 @@
 # flexbox-grid-mixin
 
+[http://jsmestad.github.io/flexbox-grid-mixin/](http://jsmestad.github.io/flexbox-grid-mixin/)
+
 ### Why another grid mixin?
 
 All the solutions out there fell into two categories:
